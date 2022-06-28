@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'nunito';
+  src: url('../fonts/Nunito-Light.ttf');
+}
+
+body {
+
+	font-family: nunito;
+}
+
+.bd_login {
+
+	background: linear-gradient( rgba(0,0,0,.7),rgba(0,0,0,.7)), url('../img/bg_login (1).jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+
+.form_login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40%;
+
+}
+
+.gold_color {
+	color: #E1C41F;
+}
+
+.a_gold_color {
+	color: #E1C41F;
+}
+
+a.a_gold_color:hover {
+	color:  #423605;
+}
+
+.btn_login {
+	color: white;
+	background-color: #E1C41F;
+	text-align: center;
+	border-radius: 20px;
+
+}
+
+.form-control_custom {
+	font-family: FontAwesome, nunito;
+	background-color:  black;
+	border-color: #131313;
+	opacity: 0.7;
+	border-right: none;
+}
+
+.form_login_custom input::placeholder {
+	color:  white;
+}
+
+.linha_login {
+
+	background-color: white;
+}
+
+.img_input {
+	width: 20px;
+	height: 20px;
+}

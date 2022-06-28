@@ -1,0 +1,57 @@
+.bg-gradient-primary {
+  background-image: linear-gradient(180deg,#2c2f52 10%,#181a2d);
+  background-size: cover;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link {
+  border-left: 4px solid transparent;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(56,60,106,0.27), rgb(54,58,99));
+  border-radius: 2px;
+  border-left: 4px solid rgb(78,115,223);
+  font-weight: normal;
+}
+
+.sidebar-dark #sidebarToggle {
+  background-color: rgb(75,79,118);
+}
+
+.sidebar-dark #sidebarToggle:hover {
+  background-color: rgb(89,96,160);
+}
+
+.sidebar .nav-item .collapse .collapse-inner {
+  border-radius: .35rem;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(7,27,222,0.15);
+}
+
+.sidebar .nav-item {
+  margin-top: 5px;
+}
+
+.sidebar.toggled span, .sidebar.toggled i  {
+  margin-left: -8px;
+}
+
+@media (min-width: 768px) {
+  .sidebar span {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar span, .sidebar i {
+    margin-left: -8px;
+  }
+}
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+
+
+
