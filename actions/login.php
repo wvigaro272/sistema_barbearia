@@ -3,7 +3,7 @@
 session_start();
 
 // Conexão
-require_once 'db_connect.php';
+require_once '../connections/db_connect.php';
 
 // Clear - Proteção contra XSS (Cross Site Scripting)
 function clear($input) {
@@ -22,8 +22,8 @@ function clear($input) {
 //verifica se existe dados na variavel do input email e senha da pagina cadastro.php
 if (isset($_POST['email']) && isset($_POST['senha'])) {
 
-	$email = clear($_POST['email']); //Pegando dados passados por AJAX 
-	$senha = clear( $_POST['senha']); //Pegando dados passados por AJAX
+	$email = clear($_POST['email']); //Pegando dados passados por AJAX e passando pela função para impedir ataques a vulnerabilidade do sistema
+	$senha = clear( $_POST['senha']); //Pegando dados passados por AJAX e passando pela função para impedir ataques a vulnerabilidade do sistema
 
 
 	if (empty($email) or empty($senha)) {
@@ -33,16 +33,19 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
 	} else {
 
-		$sql = "SELECT email FROM usuarios WHERE email = '".$email."' ";
+		$sql = "SELECT email FROM tb_usuarios WHERE email = '".$email."' ";
 		$resultado = mysqli_query($connect, $sql);
 		$rows = mysqli_num_rows($resultado);
 
 		if ($rows > 0) {
 
 			$senha = md5($senha);       
-			$sql = "SELECT * FROM usuarios WHERE email = '".$email."' AND senha = '".$senha."' ";
+			$sql = "SELECT * FROM tb_usuarios WHERE email = '".$email."' AND senha = '".$senha."' ";
 			$resultado = mysqli_query($connect, $sql);
 			$rows = mysqli_num_rows($resultado);
+			$dados = mysqli_fetch_array($resultado);
+
+			$idUsuario = $dados['id'];
 
 			if ($rows == 1 ) {
 
@@ -50,7 +53,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 				$sqlLog = "INSERT INTO 
 						log_login (log_login, log_data)
 						VALUES
-						('".$email."', NOW() )";
+						('".$idUsuario."', NOW() )";
 
 				mysqli_query($connect, $sqlLog);
 				

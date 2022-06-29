@@ -1,0 +1,32 @@
+CREATE DATABASE `bd_barbearia` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+CREATE TABLE `log_login` (
+  `id` int(11) NOT NULL,
+  `fk_id_usuario` int(11) DEFAULT NULL,
+  `log_data` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `tb_usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `nivel_acesso` varchar(45) DEFAULT NULL,
+  `data_cadastro` datetime DEFAULT NULL,
+  `prim_login` varchar(1) DEFAULT NULL,
+  `telefone` varchar(25) DEFAULT NULL,
+  `cpf` varchar(11) DEFAULT NULL,
+  `data_nascimento` date DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
+  `cep` varchar(15) DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `numero_endereco` varchar(11) DEFAULT NULL,
+  `bairro_endereco` varchar(155) DEFAULT NULL,
+  `uf` varchar(2) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `segmento_negocio` varchar(155) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

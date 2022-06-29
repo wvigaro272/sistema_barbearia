@@ -10,20 +10,63 @@ body {
 
 .bd_login {
 
-	background: linear-gradient( rgba(0,0,0,.7),rgba(0,0,0,.7)), url('../img/bg_login (1).jpg');
+	background: linear-gradient( rgba(0,0,0,.7),rgba(0,0,0,.7)), url('../img/bg_login (3).jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 
 }
 
 
-.form_login {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 40%;
-
+/* responsividade padrão para celular */
+@media only screen and (max-device-width: 599px) {
+	.form_login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 32%;
+	}
 }
+
+/* responsividade padrão para tablet no moto retrato */
+@media only screen and (min-device-width: 600px) {
+	.form_login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40%;
+	}
+}
+
+/* responsividade padrão para tablet no moto paisagem */
+@media only screen and (min-device-width: 900px) {
+	.form_login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40%;
+	}
+}
+
+/* responsividade padrão para desktop/note */
+@media only screen and (min-device-width: 1200px) {
+	.form_login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10%;
+	}
+}
+
+/* responsividade padrão para grandes monitores */
+@media only screen and (min-device-width: 1800px) {
+	.form_login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10%;
+	}
+}
+
 
 .gold_color {
 	color: #E1C41F;
@@ -34,7 +77,7 @@ body {
 }
 
 a.a_gold_color:hover {
-	color:  #423605;
+	color:  #b49d19;
 }
 
 .btn_login {
@@ -45,12 +88,25 @@ a.a_gold_color:hover {
 
 }
 
+.btn_login:hover, .btn_login:focus {
+	box-shadow:0 0 0 .2rem rgba(180, 157, 25, 1);
+	background-color: #b49d19;
+	color: white;
+}
+
+
 .form-control_custom {
 	font-family: FontAwesome, nunito;
 	background-color:  black;
 	border-color: #131313;
 	opacity: 0.7;
-	border-right: none;
+
+}
+
+.form-control_custom2:hover, .form-control_custom2:focus {
+	border-color: black !important;
+	background-color: #1b1a1a;
+	color: white;
 }
 
 .form_login_custom input::placeholder {

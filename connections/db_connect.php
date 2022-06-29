@@ -4,7 +4,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$db_name = "local_host";
+	$db_name = "bd_barbearia";
 
 	$connect = mysqli_connect($servername, $username, $password, $db_name);
 	//Codificação para acentuação e caracteres especiais no banco de dados.\
